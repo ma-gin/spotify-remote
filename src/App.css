@@ -1,8 +1,10 @@
-:root{
+:root {
   --dark-bg: #080808;
   --light-bg: #181818;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -10,7 +12,8 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   color: azure;
 }
@@ -20,78 +23,102 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
 .app {
-  display: flex;
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: var(--dark-bg)
-}
-
-.display {
-  display: flex;
-  flex-direction: column;
+  background-color: var(--dark-bg);
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 12%;
+  height: 100%;
   max-width: 300px;
+  background-color: var(--dark-bg);
 }
 
-.side-nav{
+.side-nav {
   margin: 2rem 0;
 }
 
 .side-nav-item {
-  padding: 0.2rem 0 0.2rem 1rem;
+  padding: 0.25rem 0 0.25rem 1rem;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: small;
 }
 
-.side-nav-item > div{
+.side-nav-item > div {
   margin-left: 2rem;
 }
 
-#logo{
+#logo {
   padding: 1rem;
   width: 70%;
 }
-
-.display{
-  background: linear-gradient(180deg, rgba(129, 137, 245, 0.377) 0%, #181818 36%);
-  flex-grow: 1;
+.display {
+  display: flex;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(129, 137, 245, 0.377) 0%,
+    #181818 36%
+  );
+}
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 .player {
   position: absolute;
+  border-top: 1px solid #414141;
   bottom: 0;
+  height: 120px;
   display: flex;
+  padding-inline: 1rem;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   background-color: var(--light-bg);
 }
 
-.current-song{
+.current-song {
   display: flex;
 }
 
 @media (max-width: 800px) {
- .sidebar {
- display: none;
- }
+  .sidebar {
+    display: none;
+  }
 }
