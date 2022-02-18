@@ -7,19 +7,19 @@ const AlbumCover = () => {
 
 const CurrentSong = () => {
     return (
-        <h1>IMG</h1>
+        <h1>Song</h1>
     )
 }
 
 const MainPlyer = () => {
     return (
-        <h1>IMG</h1>
+        <h1>Player</h1>
     )
 }
 
 const MainControls = () => {
     return (
-        <h1>IMG</h1>
+        <h1>Controls</h1>
     )
 }
 

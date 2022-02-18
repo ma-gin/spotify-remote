@@ -73,7 +73,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .display{
-  background-color: red;
+  background: linear-gradient(180deg, rgba(129, 137, 245, 0.377) 0%, #181818 36%);
   flex-grow: 1;
 }
 

@@ -1,5 +1,9 @@
-export default function Display () {
+import Navigation from './Navigation'
+
+export default function Display() {
     return (
-        <h1 className="display">Hello Display</h1>
+        <div className='display'>
+            <Navigation />
+        </div>
     )
 }
