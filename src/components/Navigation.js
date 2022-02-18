@@ -1,5 +1,5 @@
 export default function Navigation () {
     return (
-        <h1>Hello Navigation</h1>
+        <h1 className="top-nav">Hello Navigation</h1>
     )
 }

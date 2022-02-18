@@ -37,7 +37,35 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: black;
 }
 
+.display {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  max-width: 300px;
+}
+
+#logo{
+  padding: 1rem;
+  width: 70%;
+}
+
+.display{
+  background-color: red;
+  flex-grow: 1;
+}
+
 .player {
   position: absolute;
   bottom: 0;
+}
+
+@media (max-width: 800px) {
+ .sidebar {
+ display: none;
+ }
 }

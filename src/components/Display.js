@@ -1,5 +1,5 @@
 export default function Display () {
     return (
-        <h1>Hello Display</h1>
+        <h1 className="display">Hello Display</h1>
     )
 }
