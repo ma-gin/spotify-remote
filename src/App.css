@@ -1,3 +1,7 @@
+:root{
+  --dark-bg: #080808;
+  --light-bg: #181818;
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -34,7 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: var(--dark-bg)
 }
 
 .display {
@@ -76,6 +80,14 @@ p, h1, h2, h3, h4, h5, h6 {
 .player {
   position: absolute;
   bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--light-bg);
+}
+
+.current-song{
+  display: flex;
 }
 
 @media (max-width: 800px) {
