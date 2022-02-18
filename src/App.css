@@ -59,6 +59,7 @@ h6 {
 .sidebar {
   display: flex;
   flex-direction: column;
+  min-width: 240px;
   width: 12%;
   height: 100%;
   max-width: 300px;
@@ -75,7 +76,7 @@ h6 {
   align-items: center;
   text-decoration: none;
   color: inherit;
-  font-size: small;
+  font-size: smaller;
 }
 
 .side-nav-item > div {
@@ -95,10 +96,6 @@ h6 {
     #181818 36%
   );
 }
-.content {
-  display: flex;
-  flex-direction: column;
-}
 
 .player {
   position: absolute;
@@ -113,8 +110,26 @@ h6 {
   background-color: var(--light-bg);
 }
 
-.current-song {
+.flex {
   display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  height: 180px;
+  width: 10vw;
+  padding: 0.5rem;
+  background-color: hsla(0, 0%, 9%, 0.6);
+}
+
+.card-text {
+  padding: 1rem;
+  color: azure;
+  font-size: 12px;
 }
 
 @media (max-width: 800px) {
