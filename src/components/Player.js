@@ -1,5 +1,5 @@
 export default function Player () {
     return (
-        <h1>Hello Player</h1>
+        <h1 className="player">Hello Player</h1>
     )
 }
