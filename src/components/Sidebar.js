@@ -1,6 +1,22 @@
+import { HomeIcon, SearchIcon, LibraryIcon } from "./Icons"
+
 const Logo = () => <img id="logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="spotify logo" />
 
-const SideNav = () => <h1>Hello SideNav</h1>
+const SideNav = () => {
+    return (
+        <div className="side-nav">
+            <div className="side-nav-item">
+                <HomeIcon/><div>Home</div>
+            </div>
+            <div className="side-nav-item">
+                <SearchIcon/><div>Search</div>
+            </div>
+            <div className="side-nav-item">
+                <LibraryIcon/><div>Library</div>
+            </div>
+        </div>
+    )
+}
 
 const PlaylistContainer = () => <h1>Hello Playlist</h1>
         
@@ -17,11 +33,7 @@ export default function Sidebar() {
 
     //       <div class="side-icons">
     //         <div class="hover-effect d-flex ">
-    //           <svg class="svg-top" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-    //             class="bi bi-house-door-fill" viewBox="0 0 16 16">
-    //             <path
-    //               d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
-    //           </svg>
+
 
     //           <a href="#" style="text-decoration: none; color: inherit;">Home</a>
     //         </div>

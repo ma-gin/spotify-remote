@@ -49,6 +49,20 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 300px;
 }
 
+.side-nav{
+  margin: 2rem 0;
+}
+
+.side-nav-item {
+  padding: 0.2rem 0 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.side-nav-item > div{
+  margin-left: 2rem;
+}
+
 #logo{
   padding: 1rem;
   width: 70%;
