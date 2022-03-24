@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react"
-import { Song } from "./Song"
+import { Card } from "./Card"
 
 export const HomeSection = ({ artist }) => {
-  const [name, setData] = useState("")
-  const [album, setAlbum] = useState({})
+  const [data, setData] = useState(null)
+  const [name, setName] = useState("")
+  // const [album, setAlbum] = useState({})
+
+  // let dataArr
 
   useEffect(() => {
     const base_url =
@@ -19,12 +22,17 @@ export const HomeSection = ({ artist }) => {
           },
         })
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
         const name = data.data[0].artist.name
-        const album = data.data[0].album
-
-        setData(name)
-        setAlbum(album)
+        // const album = data.data[0].album
+        // console.log(data)
+        // console.log(data.data)
+        // console.log(name)
+        // const resp = data.data
+        // console.log("resp is" + resp)
+        setName(name)
+        setData(data)
+        // setAlbum(album)
       } catch (error) {
         console.log(error)
       }
@@ -32,12 +40,52 @@ export const HomeSection = ({ artist }) => {
     fetchArtist()
   }, [artist])
 
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex--
+      ;[array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ]
+    }
+
+    return array
+  }
+
   return (
     <div className="column">
       <h1>{name}</h1>
-      <div className="flex">
-        <Song src={album.cover} album={album.title} />
+      <div className="flex display-section">
+        {data &&
+          shuffle(
+            data.data
+              .map((album) => (
+                <Card
+                  key={album.id}
+                  src={album.album.cover}
+                  name={name}
+                  album={album.album.title}
+                />
+              ))
+              .splice(17)
+          )}
       </div>
     </div>
   )
 }
+// const content = posts.map((post) => <Post key={post.id} id={post.id} title={post.title} />)
+
+// {
+//   data.map((album) => (
+//       <div key={album.album.asin}>
+//         {" "}
+//         <Book book={book} changeState={changeState}></Book>{" "}
+//       </div>
+//     ))
+// }
+
+// movies.map((movie) => <SingleMovie data={movie} key={movie.imdbID} />)

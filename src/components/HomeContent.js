@@ -8,9 +8,9 @@ export default function HomeComponent() {
   return (
     <div className="column">
       <HomeTop />
-      <HomeSection artist={"eminem"} />
+      <HomeSection artist={"the+doors"} />
       <HomeSection artist={"pink+floyd"} />
-      <HomeSection artist={"queen"} />
+      <HomeSection artist={"snak+the+ripper"} />
     </div>
   )
 }
