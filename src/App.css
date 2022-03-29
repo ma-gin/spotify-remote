@@ -132,6 +132,10 @@ h6 {
   border-radius: 8px;
 }
 
+.content {
+  width: 100%;
+}
+
 .card-img {
   /* clamp */
 }
@@ -152,6 +156,42 @@ h6 {
   }
 }
 
-.top-nav {
-  display: flex;
+#top-nav {
+  padding: 1vh 1.5vw;
+  justify-content: space-between;
+}
+
+#top-nav i {
+  font-size: 1.6rem;
+  margin-inline: 6px;
+}
+
+.hr {
+  height: 1px;
+  background-color: hsla(0, 0%, 30%, 0.6);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.playlist-title {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+select {
+  background-color: hsla(0, 0%, 30%, 0.6);
+  color: azure;
+  border-radius: 20px;
+  min-width: 90px;
+  width: 5vw;
+  padding: 2px 1rem;
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+option {
+  padding: 5px 0px;
 }

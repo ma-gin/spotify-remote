@@ -30,13 +30,22 @@ const SideNav = () => {
   )
 }
 
-const PlaylistContainer = () => <h4>Hello Playlist</h4>
+const PlaylistContainer = () => (
+  <>
+    <div className="playlist-title side-nav-item">Example Playlist</div>
+    <div className="playlist-title side-nav-item">Example Playlist</div>
+    <div className="playlist-title side-nav-item">Example Playlist</div>
+    <div className="playlist-title side-nav-item">Example Playlist</div>
+    <div className="playlist-title side-nav-item">Example Playlist</div>
+  </>
+)
 
 export default function Sidebar() {
   return (
     <div className="sidebar">
       <Logo />
       <SideNav />
+      <div className="hr"></div>
       <PlaylistContainer />
     </div>
   )
