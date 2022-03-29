@@ -6,7 +6,7 @@ export default function Navigation() {
         <i className="bi bi-chevron-right"></i>
       </div>
       <select name="nav-dropdown" id="nav-profile">
-        <option selected>Log In</option>
+        <option defaultValue={0}>Log In</option>
         <option>Account</option>
         <option>Profile</option>
         <option>Upgrade to Premium</option>

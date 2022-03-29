@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Card } from "./Card"
+import Card from "./Card"
 
 export const HomeSection = ({ artist }) => {
   const [data, setData] = useState(null)
@@ -56,6 +56,12 @@ export const HomeSection = ({ artist }) => {
     return array
   }
 
+  function screenWidthCalc() {
+    if (window.screen.availWidth < 600) return 22
+    if (window.screen.availWidth < 800) return 24
+    return 16
+  }
+
   return (
     <div className="column">
       <h1>{name}</h1>
@@ -68,24 +74,11 @@ export const HomeSection = ({ artist }) => {
                   key={album.id}
                   src={album.album.cover}
                   name={name}
-                  album={album.album.title}
-                />
+                  album={album.album.title}></Card>
               ))
-              .splice(17)
+              .splice(screenWidthCalc())
           )}
       </div>
     </div>
   )
 }
-// const content = posts.map((post) => <Post key={post.id} id={post.id} title={post.title} />)
-
-// {
-//   data.map((album) => (
-//       <div key={album.album.asin}>
-//         {" "}
-//         <Book book={book} changeState={changeState}></Book>{" "}
-//       </div>
-//     ))
-// }
-
-// movies.map((movie) => <SingleMovie data={movie} key={movie.imdbID} />)
