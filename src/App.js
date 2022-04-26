@@ -7,21 +7,32 @@ import Album from "./components/Album"
 import Search from "./components/Search"
 import NotFound from "./components/NotFound"
 import Login from "./views/login/Login"
+import { useEffect } from "react"
+import { getAccessToken } from "./spotify"
 
-const App = () => (
-  <Login />
-  // <BrowserRouter>
-  //   <Login />
+const App = () => {
+  useEffect(() => {
+    const token = getAccessToken()
+    console.log(token)
+  }, [])
 
-  //   <Routes>
-  //     <Route path="/" element={<Home />} />
-  //     <Route path="/artist" element={<Artist />} />
-  //     <Route path="/album" element={<Album />} />
-  //     <Route path="/search" element={<Search />} />
-  //     <Route path="*" element={<NotFound />} />
-  //   </Routes>
-  //   <Player />
-  // </BrowserRouter>
-)
+  return (
+    <div className="App">
+      <Login />
+    </div>
+    // <BrowserRouter>
+    //   <Login />
+
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/artist" element={<Artist />} />
+    //     <Route path="/album" element={<Album />} />
+    //     <Route path="/search" element={<Search />} />
+    //     <Route path="*" element={<NotFound />} />
+    //   </Routes>
+    //   <Player />
+    // </BrowserRouter>
+  )
+}
 
 export default App

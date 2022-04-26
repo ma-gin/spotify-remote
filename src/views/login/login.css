@@ -1,4 +1,6 @@
 .login {
+  max-width: 900px;
+  margin: 0 auto;
   display: grid;
   place-items: center;
   height: 100vh;
@@ -13,6 +15,7 @@
   padding: 20px;
   border-radius: 96px;
   background-color: green;
+  letter-spacing: 1px;
   color: #fff;
   font-weight: 800;
   text-decoration: none;
