@@ -9,18 +9,19 @@ import NotFound from "./components/NotFound"
 import Login from "./views/login/Login"
 
 const App = () => (
-  <BrowserRouter>
-    <Login />
+  <Login />
+  // <BrowserRouter>
+  //   <Login />
 
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/artist" element={<Artist />} />
-      <Route path="/album" element={<Album />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-    <Player />
-  </BrowserRouter>
+  //   <Routes>
+  //     <Route path="/" element={<Home />} />
+  //     <Route path="/artist" element={<Artist />} />
+  //     <Route path="/album" element={<Album />} />
+  //     <Route path="/search" element={<Search />} />
+  //     <Route path="*" element={<NotFound />} />
+  //   </Routes>
+  //   <Player />
+  // </BrowserRouter>
 )
 
 export default App
