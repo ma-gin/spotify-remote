@@ -1,5 +1,4 @@
 import "./App.css"
-import Player from "./components/Player"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./components/Home"
 import Artist from "./components/Artist"
@@ -15,14 +14,16 @@ import { useStateLayerValue } from "./components/StateLayer"
 const spotify = new SpotifyWebApi()
 
 const App = () => {
-  const [token, setToken] = useState(null)
-  const [{ user }, dispatch] = useStateLayerValue()
+  const [{ user, token }, dispatch] = useStateLayerValue()
   useEffect(() => {
     const hash = getAccessToken()
     window.location.hash = ""
     const _token = hash.access_token
     if (_token) {
-      setToken(_token)
+      dispatch({
+        type: "SET_TOKEN",
+        token: _token,
+      })
       spotify.setAccessToken(_token)
       spotify.getMe().then((user) => {
         dispatch({
@@ -33,25 +34,23 @@ const App = () => {
     }
   }, [])
 
-  console.log(user)
-
   return (
     <div className="App">
-      {token && <Home />}
-      {!token && <Login />}
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              (token && <Home spotify={spotify} />) || (!token && <Login />)
+            }
+          />
+          <Route path="/artist" element={<Artist />} />
+          <Route path="/album" element={<Album />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-    // <BrowserRouter>
-    //   <Login />
-
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/artist" element={<Artist />} />
-    //     <Route path="/album" element={<Album />} />
-    //     <Route path="/search" element={<Search />} />
-    //     <Route path="*" element={<NotFound />} />
-    //   </Routes>
-    //   <Player />
-    // </BrowserRouter>
   )
 }
 

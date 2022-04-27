@@ -62,8 +62,8 @@ h6 {
   display: flex;
   flex-direction: column;
   min-width: 240px;
-  width: 12%;
-  height: 100%;
+  width: 16vw;
+  height: 100vh;
   max-width: 300px;
   background-color: var(--dark-bg);
 }
@@ -89,7 +89,7 @@ h6 {
   padding: 1rem;
   width: 70%;
 }
-.display {
+.home {
   display: flex;
   height: 100%;
   background: linear-gradient(
@@ -116,6 +116,9 @@ h6 {
   display: flex;
 }
 
+.home-main {
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -135,7 +138,7 @@ h6 {
   position: relative;
 }
 
-.content {
+.home-wrapper {
   width: 100%;
 }
 

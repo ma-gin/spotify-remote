@@ -1,15 +1,15 @@
 import { HomeIcon, SearchIcon, LibraryIcon } from "./Icons"
 import { Link } from "react-router-dom"
 
-// const Logo = () => (
-//   <Link to="/">
-//     <img
-//       id="logo"
-//       src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
-//       alt="spotify logo"
-//     />
-//   </Link>
-// )
+const Logo = () => (
+  <Link to="/">
+    <img
+      id="logo"
+      src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
+      alt="spotify logo"
+    />
+  </Link>
+)
 
 // const SideNav = () => {
 //   return (
@@ -43,7 +43,7 @@ import { Link } from "react-router-dom"
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      {/* <Logo /> */}
+      <Logo />
       {/* <SideNav /> */}
       <div className="hr"></div>
       {/* <PlaylistContainer /> */}

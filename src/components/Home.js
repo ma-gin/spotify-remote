@@ -1,15 +1,15 @@
 import Sidebar from "./Sidebar"
-import Navigation from "./Navigation"
-import HomeContent from "./HomeContent"
+import HomeMain from "./HomeMain"
+import Player from "./Player"
 
 export default function Home() {
   return (
-    <div className="display">
-      <Sidebar />
-      <div className="content">
-        <Navigation />
-        <HomeContent />
+    <div className="home">
+      <div className="home-wrapper">
+        <Sidebar />
+        <HomeMain />
       </div>
+      <Player />
     </div>
   )
 }
