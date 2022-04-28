@@ -2,14 +2,31 @@ import { Link } from "react-router-dom"
 import HomeIcon from "@material-ui/icons/Home"
 import SearchIcon from "@material-ui/icons/Search"
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic"
+import { useStateLayerValue } from "./StateLayer"
 
 export default function Sidebar() {
+  const [{ playlists }, dispatch] = useStateLayerValue()
+  console.log(playlists)
+  console.log(playlists.items)
   return (
     <div className="sidebar">
-      <Logo />
-      <SideTopNav />
+      <Logo className="side-nav-logo" />
+      <div className="side-nav-top">
+        <Link to="/">
+          <SidebarItem Icon={HomeIcon} title={"Home"} />
+        </Link>
+        <Link to="/search">
+          <SidebarItem Icon={SearchIcon} title={"Search"} />
+        </Link>
+        <Link to="/">
+          <SidebarItem Icon={LibraryMusicIcon} title={"Library"} />
+        </Link>
+      </div>
       <div className="hr"></div>
-      <PlaylistContainer />
+      {playlists &&
+        playlists.items.map((item, i) => {
+          return <SidebarItem key={i} title={item.name} />
+        })}
     </div>
   )
 }
@@ -24,31 +41,11 @@ const Logo = () => (
   </Link>
 )
 
-const SideTopNav = () => {
+const SidebarItem = ({ Icon, title = "" }) => {
   return (
-    <div className="side-nav">
-      <Link className="side-nav-item" to="/">
-        <HomeIcon />
-        <p>Home</p>
-      </Link>
-      <Link className="side-nav-item" to="/search">
-        <SearchIcon />
-        <p>Search</p>
-      </Link>
-      <Link className="side-nav-item" to="/artist">
-        <LibraryMusicIcon />
-        <p>Library</p>
-      </Link>
+    <div className="side-nav-item">
+      {Icon && <Icon className="side-nav-icon" />}
+      {Icon ? <h4>{title}</h4> : <p>{title}</p>}
     </div>
   )
 }
-
-const PlaylistContainer = () => (
-  <>
-    <div className="playlist-title side-nav-item">Example Playlist</div>
-    <div className="playlist-title side-nav-item">Example Playlist</div>
-    <div className="playlist-title side-nav-item">Example Playlist</div>
-    <div className="playlist-title side-nav-item">Example Playlist</div>
-    <div className="playlist-title side-nav-item">Example Playlist</div>
-  </>
-)

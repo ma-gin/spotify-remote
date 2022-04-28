@@ -65,11 +65,24 @@ h6 {
   width: 16vw;
   height: 100vh;
   max-width: 300px;
+  padding: 0.8rem;
   background-color: var(--dark-bg);
+}
+
+.side-nav-top {
+  padding: 10px 0 20px 0;
+}
+
+.side-nav-top > a {
+  text-decoration: none;
 }
 
 .side-nav {
   margin: 2rem 0;
+}
+
+.side-nav-logo {
+  margin-bottom: 10px;
 }
 
 .side-nav-item {
@@ -77,9 +90,13 @@ h6 {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: inherit;
   font-size: smaller;
   color: #808080;
+}
+
+.side-nav-item > h4 {
+  text-decoration: none;
+  margin-left: 10px;
 }
 
 .side-nav-item > p {
