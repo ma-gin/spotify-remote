@@ -79,10 +79,16 @@ h6 {
   text-decoration: none;
   color: inherit;
   font-size: smaller;
+  color: #808080;
 }
 
-.side-nav-item > div {
-  margin-left: 2rem;
+.side-nav-item > p {
+  font-size: 14px;
+  margin-left: 1rem;
+}
+
+.side-nav-item:hover {
+  color: white;
 }
 
 #logo {
